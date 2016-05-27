@@ -1,3 +1,8 @@
+@import url("../fonts/bebasneue_regular/stylesheet.css");
+@import url("../fonts/roboto.css");
+@import url("../fonts/robotoslab.css");
+@import url("../fonts/robotocondensed.css");
+@import url("../fonts/demo-app/styles.css");
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -784,14 +789,14 @@ th {
 /**
  * Apply to any column to make it the last one of the current row.
  */
-.modal, .modal .overlay, .modal > .container, .modal > .container > .content, .list, .optionList, .groupList, .loadingScreen, .detail, .reviews {
+.modal, .modal .overlay, .modal > .container, .modal > .container > .content, .list, .optionList, .groupList, .loadingScreen, .view.footer-demo-app .footer-demo-app-content, .products-list, .page.product {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0; }
 
-.modal > .container > .content, .list, .optionList, .groupList {
+.modal > .container > .content, .list, .optionList, .groupList, .products-list, .page.product {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -1669,11 +1674,40 @@ th {
   .miniMap .leaflet-container {
     height: 300px; }
 
+.carousel {
+  position: relative; }
+  .carousel .panes {
+    position: relative;
+    width: 100%;
+    overflow: hidden; }
+    .carousel .panes .pane {
+      will-change: -webkit-transform, transform;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center; }
+      .carousel .panes .pane figure {
+        height: 100%; }
+      .carousel .panes .pane img {
+        position: absolute;
+        top: 50%;
+        left: 50%; }
+    .carousel .panes.animate > .pane {
+      -webkit-transition: -webkit-transform 300ms;
+      transition: transform 300ms; }
+
 .image {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 0;
+  margin: 0;
+  padding: 0; }
+  .image img {
+    font-size: 0; }
   .image.center img {
     position: absolute;
     display: block;
@@ -1683,6 +1717,19 @@ th {
     display: block;
     margin-top: 0 !important;
     margin-left: 0 !important; }
+
+.rate {
+  font-size: 20px; }
+  .rate span {
+    font-family: "demo-app";
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
 
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1701,7 +1748,10 @@ html, body {
   width: 100%;
   overflow: hidden;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-family: "robotoregular";
+  font-size: 14px;
+  background: #FFF; }
 
 p {
   margin: 0;
@@ -1710,7 +1760,8 @@ p {
 #application {
   position: relative;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background: #FFF; }
 
 #application > .page {
   position: absolute;
@@ -1718,10 +1769,17 @@ p {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #FFF;
-  color: #000; }
-  #application > .page.swipe-back {
-    box-shadow: -4px 0px 20px 0px rgba(0, 0, 0, 0.3); }
+  color: #000;
+  background: #FFF; }
+
+.ios #application > .page {
+  top: 64px; }
+
+.section-divider {
+  background-color: #ddd;
+  height: 1px;
+  width: 100%;
+  display: block; }
 
 .navigation-view {
   position: absolute;
@@ -1729,14 +1787,13 @@ p {
   left: 0;
   right: 0;
   height: 44px;
-  border: 1px dashed green;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background: #FFF; }
   .navigation-view .navigation-bar {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    border: 1px solid blue;
     box-sizing: border-box; }
   .navigation-view .title-navigation-bar {
     text-align: center;
@@ -1746,5 +1803,248 @@ p {
   .navigation-view .ios-navigation-bar {
     height: 44px;
     line-height: 44px; }
+    .navigation-view .ios-navigation-bar.logo-bar {
+      font-size: 54px; }
+      .navigation-view .ios-navigation-bar.logo-bar .center-side {
+        height: 44px;
+        overflow: hidden; }
+      .navigation-view .ios-navigation-bar.logo-bar i:before {
+        vertical-align: middle; }
+
+.ios .navigation-view {
+  top: 20px; }
+
+.view.footer-demo-app {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: #191919; }
+  .view.footer-demo-app .footer-demo-app-content {
+    height: 44px;
+    text-align: center;
+    font-family: "robotolight";
+    font-size: 11px;
+    color: #656565;
+    margin: auto 20px; }
+
+.button, .button.suggest {
+  position: relative;
+  display: inline-block;
+  font-family: "robotocondensedregular";
+  text-align: center;
+  font-size: 16px;
+  background-color: white;
+  color: #8D8D8D;
+  padding: 11px 20px;
+  font-weight: 400;
+  min-width: 44px;
+  line-height: normal;
+  margin: 0;
+  border-radius: 2px;
+  border-width: 0; }
+  .button i, .button.suggest i {
+    position: relative;
+    font-size: 23px;
+    vertical-align: middle; }
+    .button i .plus {
+      position: absolute;
+      top: -2px;
+      left: 25px;
+      width: 10px;
+      height: 10px;
+      font-size: 16px;
+      line-height: 10px;
+      font-family: "robotothin";
+      font-style: normal; }
+  @media only screen and (max-height: 568px) {
+    .button, .button.suggest {
+      font-size: 14px; } }
+
+.suggest.button {
+  font-family: "robotocondensedregular";
+  background-color: #FA5400;
+  color: #FFF;
+  text-transform: uppercase; }
+  .suggest.button i {
+    font-size: 23px;
+    padding-right: 10px; }
+  .suggest.active-state.button {
+    background: #7A2900; }
+    .suggest.active-state.button .plus {
+      color: #666666; }
+
+.products-list .products-list-litem {
+  position: relative;
+  height: 150px;
+  padding: 5px 10px; }
+  .products-list .products-list-litem .thumb {
+    float: left;
+    height: 150px;
+    width: 100px; }
+  .products-list .products-list-litem .info {
+    margin-left: 120px; }
+    .products-list .products-list-litem .info .products-list-litem-title {
+      font-family: "bebasneueregular";
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .products-list .products-list-litem .info .products-list-litem-subtitle {
+      font-family: "bebasneueregular";
+      font-size: 16px;
+      color: #8D8D8D; }
+    .products-list .products-list-litem .info .products-list-litem-price {
+      font-family: "bebasneueregular";
+      font-size: 18px;
+      padding: 8px 0;
+      color: #222; }
+    .products-list .products-list-litem .info .products-list-litem-reviews {
+      font-family: "bebasneueregular";
+      font-size: 16px;
+      color: #8D8D8D;
+      padding-right: 5px;
+      display: inline-block; }
+      .products-list .products-list-litem .info .products-list-litem-reviews span {
+        color: #FA5400; }
+
+.products-list .items {
+  background: #FFF; }
+
+.rate {
+  color: #FA5400;
+  width: 90px;
+  display: inline-block;
+  font-size: 18px; }
+
+.page.product .carousel .breadcrumbs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  text-align: center; }
+  .page.product .carousel .breadcrumbs .bullet {
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    margin: 0 2px;
+    background: #E1E1E1; }
+    .page.product .carousel .breadcrumbs .bullet.active {
+      background: #FA5400; }
+
+.page.product .carousel .panes {
+  height: 100%; }
+
+.page.product .product-wrapper-info {
+  padding: 20px 10px; }
+  .page.product .product-wrapper-info .product-title {
+    font-family: "bebasneueregular";
+    font-size: 24px; }
+  .page.product .product-wrapper-info .product-subtitle {
+    font-family: "bebasneueregular";
+    font-size: 16px;
+    color: #8D8D8D; }
+  .page.product .product-wrapper-info .product-price-rating {
+    font-family: "bebasneueregular";
+    font-size: 20px;
+    padding: 12px 0;
+    color: #222; }
+    .page.product .product-wrapper-info .product-price-rating .rate {
+      float: right; }
+  .page.product .product-wrapper-info .product-measures {
+    position: relative;
+    height: 44px;
+    padding: 6px 0; }
+    .page.product .product-wrapper-info .product-measures .select-field {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      display: inline-block;
+      width: auto;
+      margin-bottom: 0;
+      line-height: 36px;
+      background: #dddddd;
+      color: #FA5400;
+      border-radius: 2px; }
+      .page.product .product-wrapper-info .product-measures .select-field:before {
+        content: "h";
+        font-family: "demo-app";
+        line-height: 36px;
+        font-size: 20px;
+        position: absolute;
+        left: 6px; }
+      .page.product .product-wrapper-info .product-measures .select-field select {
+        width: 100px;
+        text-indent: 35px;
+        font-family: "robotomedium";
+        text-transform: uppercase;
+        color: #FA5400;
+        line-height: normal;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        display: inline;
+        font-size: 12px;
+        line-height: 36px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        appearance: none; }
+      .page.product .product-wrapper-info .product-measures .select-field .selectField {
+        display: inline-block;
+        line-height: 36px; }
+      .page.product .product-wrapper-info .product-measures .select-field:after {
+        font-size: 20px;
+        line-height: 36px;
+        vertical-align: -2px;
+        right: 0;
+        top: 0; }
+  .page.product .product-wrapper-info .product-describe {
+    padding: 0 0 20px 0;
+    font-family: "robotolight";
+    font-size: 12px;
+    color: #666; }
+    .page.product .product-wrapper-info .product-describe b {
+      display: inline-block;
+      font-family: "robotomedium";
+      font-size: 18px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      padding-top: 22px;
+      padding-bottom: 12px; }
+    .page.product .product-wrapper-info .product-describe li {
+      list-style: disc;
+      list-style-position: inside; }
+  .page.product .product-wrapper-info .product-big-rating {
+    text-align: center;
+    font-family: "bebasneueregular";
+    font-size: 26px;
+    color: #FA5400; }
+    .page.product .product-wrapper-info .product-big-rating .rate {
+      width: 140px;
+      display: inline-block;
+      font-size: 28px;
+      padding-right: 2px; }
+  .page.product .product-wrapper-info .product-big-reviews {
+    text-align: center;
+    font-family: "bebasneueregular";
+    font-size: 26px;
+    color: #8D8D8D; }
+    .page.product .product-wrapper-info .product-big-reviews span {
+      color: #FA5400;
+      padding-right: 4px; }
+  .page.product .product-wrapper-info .product-read-reviews {
+    display: block;
+    width: 100px;
+    margin: 20px auto; }
+
+.page.product .section-divider {
+  margin: 50px auto;
+  width: 45%; }
 
 /*# sourceMappingURL=style.css.map */

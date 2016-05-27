@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget
+    id="info.belluco.demoapp"
+    version="1.0.0"
+    android-packageName="info.belluco.demoapp"
+    android-versionCode="1000000"
+    ios-CFBundleIdentifier="info.belluco.demoapp"
+    ios-CFBundleVersion="1.0.0.0"
+    windows-packageVersion="1.0.0.0"
+    defaultlocale="en-US"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0" >
+    <name>Demo App</name>
+    <description>
+
+    </description>
+    <author email="michele@belluco.info" href="http://belluco.info">
+        Baggio Matteo & Belluco Michele
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+		<preference name="webviewbounce" value="false" />
+        <preference name="DisallowOverscroll" value="true" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+		<preference name="webviewbounce" value="false" />
+        <preference name="DisallowOverscroll" value="true" />
+        <preference name="deployment-target" value="8.0" />
+    </platform>
+</widget>

@@ -1,0 +1,22 @@
+
+
+<div class="thumb"></div>
+
+<div class="info">
+	<div class="products-list-litem-title">
+		<%= h(model.title) %>
+	</div>
+	<div class="products-list-litem-subtitle">
+		<%= h(model.subtitle) %>
+	</div>
+
+	<div class="products-list-litem-price">
+		<%= formatMoney( h(model.price), h(model.currency) ) %>
+	</div>
+
+	<div class="products-list-litem-reviews">
+		<span class="total"><%= h(model.reviews) %></span> reviews
+
+	</div>
+
+</div>

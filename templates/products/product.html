@@ -1,0 +1,40 @@
+
+<div class="product-wrapper-carousel"></div>
+
+<div class="product-wrapper-info">
+
+	<div class="product-title">
+		<%= h(model.title) %>
+	</div>
+
+	<div class="product-subtitle">
+		<%= h(model.subtitle) %>
+	</div>
+
+	<div class="product-price-rating">
+		<%= formatMoney( h(model.price), h(model.currency) ) %>
+	</div>
+
+	<div class="product-measures"></div>
+
+	<div class="product-describe">
+		<%= model.describe %>
+	</div>
+
+
+	<div class="section-divider"></div>
+
+
+	<div class="product-big-rating">
+		<%= (Math.round(model.rating*10)/10).toFixed(1) %>
+	</div>
+	<div class="product-big-reviews">
+		<span><%= model.reviews %></span> Reviews
+	</div>
+
+	<div class="button suggest product-read-reviews js-read-reviews">
+		<%= __('Read reviews') %>
+	</div>
+
+
+</div>

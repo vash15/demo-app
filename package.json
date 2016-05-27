@@ -191,6 +191,12 @@
             "options": {
                 "expose": "underscore.string"
             }
+        },
+        {
+            "path": "./bower_components/accounting/accounting.js",
+            "options": {
+                "expose": "accounting"
+            }
         }
     ],
     "eve-configs-developement": {

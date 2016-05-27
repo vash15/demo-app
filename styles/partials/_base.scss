@@ -22,6 +22,9 @@ html, body {
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
+	font-family: $regular-font;
+	font-size: $default-font-size;
+	background: #FFF;
 }
 
 
@@ -36,7 +39,7 @@ p {
 	position: relative;
 	height: 100%;
 	width: 100%;
-
+	background: #FFF;
 }
 	#application > .page {
 		position: absolute;
@@ -44,24 +47,29 @@ p {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-color: #FFF;
 		color: #000;
+		background: #FFF;
 
 		&.swipe-back{
-			box-shadow:-4px 0px 20px 0px rgba(0, 0, 0, 0.3);
+			// box-shadow:-4px 0px 20px 0px rgba(0, 0, 0, 0.3);
 		}
 	}
 
 	#application > .page.deactivate {
-		// -webkit-transform: translate3d(-70px, 0, 0);
-		//         transform: translate3d(-70px, 0, 0);
 	}
 	#application > .page.deactivate.disableDeactivate {
-		// -webkit-transform: none;
-		//         transform: none;
 	}
 
 .ios #application > .page{
+	top: 44px + $ios-status-bar-height;
+}
+
+
+.section-divider{
+	background-color: #ddd;
+    height: 1px;
+    width: 100%;
+    display: block;
 }
 
 .navigation-view{
@@ -70,14 +78,14 @@ p {
 	left: 0;
 	right: 0;
 	height: 44px;
-	border: 1px dashed green;
-    box-sizing: border-box;
+	box-sizing: border-box;
+	background: #FFF;
+
     .navigation-bar{
     	position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
-    	border: 1px solid blue;
     	box-sizing: border-box;
     }
     .title-navigation-bar{
@@ -89,16 +97,41 @@ p {
     .ios-navigation-bar{
     	height: 44px;
     	line-height: 44px;
+
+		&.logo-bar{
+			font-size: 54px;
+			.center-side{
+				height: 44px;
+				overflow: hidden;
+			}
+			i:before{
+				vertical-align: middle;
+			}
+		}
+
     }
 }
 
-.home-page{
-
+.ios .navigation-view{
+	top: 0px + $ios-status-bar-height;
 }
-.detail{
-	@extend %fullscreen;
 
-}
-.reviews{
-	@extend %fullscreen;
+.view.footer-demo-app{
+	position: absolute;;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	height: $footer-demo-app-height;
+	background: $background-color;
+
+	.footer-demo-app-content{
+		@extend %fullscreen;
+		height: 44px;
+		text-align: center;
+		font-family: $light-font;
+		font-size: 11px;
+		color: #656565;
+		margin: auto 20px;
+	}
 }

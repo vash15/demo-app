@@ -1,9 +1,12 @@
 
 // Font
-// @import url("../fonts/roboto.css");
-// @import url("../fonts/robotoslab.css");
-// @import url("../fonts/robotocondensed.css");
-// @import url("../fonts/ibs/styles.css");
+@import url("../fonts/bebasneue_regular/stylesheet.css");
+@import url("../fonts/roboto.css");
+@import url("../fonts/robotoslab.css");
+@import url("../fonts/robotocondensed.css");
+@import url("../fonts/demo-app/styles.css");
+
+@import 'variables';
 
 // Vendor
 @import 'vendor/normalize';
@@ -18,4 +21,6 @@
 
 // Partials
 @import 'partials/base';
-
+@import 'partials/buttons';
+@import 'partials/products';
+@import 'partials/product';
