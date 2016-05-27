@@ -1,3 +1,7 @@
 .DS_Store
 node_modules
 bower_components
+build/assets/js/build.js
+build/assets/js/build.js.map
+build/assets/css/style.css
+build/assets/css/style.css.map
